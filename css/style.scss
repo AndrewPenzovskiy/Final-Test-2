@@ -1,0 +1,537 @@
+@import './nullstyle.scss';
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+// СПІЛЬНИЙ КЛАС ДЛЯ БАТЬКІВСЬКИХ БЛОКІВ
+.item {
+    display: flex;
+    align-items: baseline;
+    background-color: #f5f7f7;
+    border-radius: 8px;
+    margin-right: 30px;
+
+    & img {
+        width: 17px;
+    }
+}
+
+// СПІЛЬНИЙ КЛАС ДЛЯ ДОЧІРНІХ БЛОКІВ
+.item2 {
+    display: flex;
+    padding: 17px;
+    border-radius: 8px;
+
+    &:hover {
+        background-color: #dfe4e7;
+        cursor: pointer;
+        transition: .7 ease-in-out;
+    }
+    &:focus {
+        background-color: #dfe4e7;
+        outline: 4px solid #c2c4c3;
+    }
+}
+
+// КЛАСИ ДЛЯ ПЕРЕМИКАЧІВ
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+.lineThrough {
+    text-decoration: line-through;
+}
+
+// КОНТЕЙНЕРИ
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper__container {
+    height: calc(100vh - 162px);
+}
+
+.container__header {
+    background-color: #676969;
+    width: 100%;
+    height: 100px;
+
+    & .header__items {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;             
+        & .sign-out {
+            margin-right: 0;
+            display: none;
+        }
+        & .sign-in {
+            margin-right: 0;
+        }
+    }
+}
+
+// CHANGE-CONTENT
+.item__change-content {
+    pointer-events: none; //nonnnnnnnnnnnnnn
+    background-color: #c3c5c5;   
+
+    img {
+        width: 22px;
+    }
+}
+
+// TEXT-STYLE
+.item__text-style {
+    img {
+        width: 14px;
+    }
+
+    & .text-style__underline {
+        img {
+            width: 16px;
+        }
+    }
+    & .text-style__line-through {
+        img {
+            width: 18px;
+        }
+    }
+}
+
+// TEXT-SETTINGS
+.item__text-settings {
+    img {
+        width: 20px;
+    }
+
+    & .text-settings__font-family {
+        position: relative;
+        img {
+            width: 17px;
+        }
+        & .caret-down1 {
+            position: absolute;
+            right: 0;
+            width: 8px;
+        }
+    }
+    & .text-settings__font-size {
+        position: relative;
+        img {
+            width: 22px;
+        }
+        & .caret-down2 {
+            position: absolute;
+            right: 0;
+            width: 8px;
+        }
+    }
+}
+
+// Випадаючий список сімейства шрифтів
+.text-settings__font-family:focus {
+
+    & .font-family__dropdown-content {
+        display: block;
+    }
+}
+
+.font-family__dropdown-content {
+    display: none;
+    position: absolute;
+    left: -140px;
+    top: 60px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    li {
+        display: block;
+        color: black;
+        padding: 7px 30px;
+        text-decoration: none;
+        &:hover {
+            background-color: rgb(229, 229, 231);
+        }
+    }
+}
+
+// Випадаючий список розмірів шрифту
+.text-settings__font-size:focus {
+
+    & .font-size__dropdown-content {
+        display: block;
+    }
+}
+  
+.font-size__dropdown-content {
+    display: none;
+    position: absolute;
+    left: -120px;
+    top: 60px;
+    width: 170px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    li {
+        display: block;
+        color: black;
+        padding: 7px 30px;
+        text-decoration: none;
+        &:hover {
+            background-color: rgb(229, 229, 231);
+        }
+    }
+}
+
+// CONTAINER MAIN
+.container__main {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #fff;
+    padding: 30px 25px;
+
+    p:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    & .container__edit-text {
+        display: none;
+    }
+    #edit-text {
+        display: block;
+        width: 100%;
+        height: 100%;
+        resize: none;
+        outline: none;
+        font-size: 15px;
+    }
+}
+
+// Спільний клас для випадаючих вікон
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 2.5%;
+    left: 49.2%;
+    width: 620px;
+    background-color: #fff;
+    transition: 3s ease-in;
+    box-shadow: 0px 5px 18px 10px rgba(0,0,0,0.2);
+    animation: ani 0.9s forwards;
+    transform: translateX(-50%);
+
+    & .dropdown-content__title {
+        padding: 20px;
+    }
+    h2 {
+        display: inline-block;
+    }
+    & .line {
+        height: 2px;
+        background-color: rgb(235, 228, 228);
+    }
+    @keyframes ani {
+        0% {top: -50%}
+        100% {transform: translateX(-50%);}
+      }
+}
+
+// Спільний клас для кольорів, фонів
+.box {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 70px;
+    gap: 8px;
+    padding: 20px;
+
+    & .box-item {
+        cursor: pointer;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+}
+
+// Вікно вибору Colors/Images/Files
+.dropdown-content__choose {
+    display: flex;
+    border-top: 2px solid rgb(235, 228, 228);
+    border-bottom: 2px solid rgb(235, 228, 228);
+    margin-top: -2px;
+    margin-bottom: -2px;
+
+    #btn-colors, #btn-images, #btn-files {
+        color: #0597fff3;
+        text-decoration: none;
+        padding: 11px 15px;
+        &:focus {
+            color: #676969;
+            margin-bottom: -2px;
+            border-right: 2px solid rgb(235, 228, 228);
+            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            border-radius: 4px 4px 0 0;
+        }
+    }
+    #btn-colors {
+        padding-left: 20px;
+        &:focus {
+            margin-right: -2px;                    
+        }
+    }
+    #btn-images {
+        &:focus {
+            margin-left: -2px;
+            margin-right: -2px;
+            border-left: 2px solid rgb(235, 228, 228);
+        }
+    }
+    #btn-files {    
+        &:focus {
+            margin-left: -2px;
+            border-left: 2px solid rgb(235, 228, 228);
+        }
+    }
+}
+
+// Випадаюче вікно фонів
+.background__box-image {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    gap: 8px;
+    padding: 20px;
+}
+
+// Випадаючий блок файлу
+.background__box-files {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+// SIGN-IN
+.sign-in__dropdown-content {
+    border-radius: 5px;
+
+    & .dropdown-content__title {
+        text-align: center;
+        font-size: 20px;
+    }
+    & .sign-in__box {
+        padding: 20px;
+    }
+    form {
+        display: block;
+        margin-right: 14px;
+    }
+    #login, #password {
+        min-width: 100%;
+        height: 45px;
+        padding-left: 10px;
+        font-size: 17px;
+        border: 2px solid #676969;
+        margin-bottom: 15px;
+        border-radius: 7px;
+        &:focus {
+            outline: 2px solid #fa00003a;
+            box-shadow: 0px 0px 10px 7px #fa00008a;
+        }
+    }
+    & .sign-in__empty {
+        display: none;
+        color: red;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    & .sign-in__button {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #676969;
+        font-size: 22px;
+        border-radius: 7px;
+        cursor: pointer;
+        &:hover {
+            background-color: #505252;
+        }
+        #sgn-btn {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
+
+// SIGN-OUT
+.sign-out__dropdown-content {
+    top: 50%;
+    width: auto;
+    padding: 20px;
+
+    & .sign-out-btn {
+        padding: 12px 40px;
+        border-radius: 7px;
+        cursor: pointer;
+        a {
+            color: #fff;
+            text-decoration: none;
+        }     
+    }
+    & .cancel__button{
+        background-color: #31393e;
+        margin-right: 17px;
+    }
+    & .sign-out__button{
+        background-color: #d2332f;
+    }
+}
+
+// КНОПКИ БЛОКУ РЕДАГУВАННЯ
+.item__editor {
+    display: none;
+    align-items: stretch;
+    margin-right: 0;
+
+    & .editor-btns {
+        display: flex;
+    }
+    & .editor__table {
+        img {
+            width: 18px;
+        }
+    }
+    & .editor__num-list {
+        img {
+            width: 20px;
+        }
+    }
+}
+
+// Кнопка закриття вікна
+.close-button {
+    color: rgb(109, 108, 108);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+    float: right;
+    &:hover {
+        color: black;
+    }
+}
+
+// Контейнер блоків з створенням таблиці, OL і UL списків
+.editor-container__dropdown-content {
+
+    & .container__create-ol, .container__create-table, .container__create-ul  {
+        padding: 20px;
+    }
+    & .table__dropdown-content {
+        width: auto;
+        & .create-table__box {
+            display: flex;
+        }
+        & .create-table__left-box {
+            width: 50%;
+            margin-right: 10px;
+        }
+        & .create-table__right-box {
+            width: 50%;
+        }
+        & .table-box {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        & .right-box__style-color-border {
+            display: flex;
+        }
+        & .right-box__style-border {
+            margin-right: 5px;
+        }
+        & .right-box__color-border {
+            margin-right: 0;
+        }
+        & .table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+    }
+    & .ol-list__dropdown-content, .ul-list__dropdown-content {
+        width: auto;
+        & .create-ol__count-li, .create-ul__count-li {
+            margin-right: 20px;
+        }
+    }
+    label {
+        font-size: 18px;
+    }
+    input, select {
+        width: 100%;
+        height: 40px;
+        border: 2px solid #000;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        font-size: 17px;
+        color: #676969;
+        border: 2px solid #676969;
+        border-radius: 5px;
+        margin-top: 10px;
+        &:focus {
+            outline: 2px solid #fa00003a;
+            box-shadow: 0px 0px 12px 4px #fa00008a;
+        }
+    }
+    select {
+        height: 44px;
+    }
+    & .invalid {
+        display: none;
+        color: red;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    & .create__ol__buttons, .create__table__buttons, .create__ul__buttons {
+        display: flex;
+        & .reset-create-btns {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 12px 40px;
+            border-radius: 7px;
+            cursor: pointer;
+            a {
+                color: #fff;
+                text-decoration: none;
+            }    
+        }
+        & .reset__button{
+            margin-right: 10px;
+            background-color: #e74541;
+            &:hover {
+                background-color: #bd3c3a; 
+            }
+        }
+        & .create__button{
+            background-color: #1d9442;
+            &:hover {
+                background-color: #187435; 
+            }
+        }
+    }   
+}

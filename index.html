@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/outstyle.css">
+    <title>TextEditor2.0</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="container__header">
+                <div class="header__items">
+                    <div tabindex="0" class="item__change-content item item2">
+                        <img src="./img/icons/code.svg" alt="code-icon">
+                    </div>
+                    <div class="item__text-style item">
+                        <div tabindex="1" class="text-style__bold item2">
+                            <img src="./img/icons/bold.svg" alt="bold-icon">
+                        </div>
+                        <div tabindex="2" class="text-style__italic item2">
+                            <img src="./img/icons/italic.svg" alt="italic-icon">
+                        </div>
+                        <div tabindex="3" class="text-style__underline item2">
+                            <img src="./img/icons/underline.svg" alt="underline-icon">
+                        </div>
+                        <div tabindex="4" class="text-style__line-through item2">
+                            <img src="./img/icons/strikethrough.svg" alt="strikethrough-icon">
+                        </div>
+                    </div>
+                    <div class="item__text-align item">
+                        <div tabindex="5" class="text-align__left item2">
+                            <img src="./img/icons/align-left.svg" alt="align-left-icon">
+                        </div>
+                        <div tabindex="6" class="text-align__center item2">
+                            <img src="./img/icons/align-center.svg" alt="align-center-icon">
+                        </div>
+                        <div tabindex="7" class="text-align__right item2">
+                            <img src="./img/icons/align-right.svg" alt="align-right-icon">
+                        </div>
+                    </div>
+                    <div class="item__text-settings item">
+                        <div tabindex="8" class="text-settings__font-family item2">
+                            <img src="./img/icons/font.svg" alt="font-icon">
+                            <img class="caret-down1" src="./img/icons/caret-down.svg" alt="caret-down-icon">
+                            <ul class="font-family__dropdown-content">
+                                <li class="font-family">Arial</li>
+                                <li class="font-family">Georgia</li>
+                                <li class="font-family">Impact</li>
+                                <li class="font-family">Tahoma</li>
+                                <li class="font-family">Times New Roman</li>
+                                <li class="font-family">Verdana</li>
+                            </ul>
+                        </div>
+                        <div tabindex="9" class="text-settings__font-size item2">
+                            <img src="./img/icons/text-height.svg" alt="text-height-icon">
+                            <img class="caret-down2" src="./img/icons/caret-down.svg" alt="caret-down-icon">
+                            <ul class="font-size__dropdown-content">
+                                <li class="font-size">12px</li>
+                                <li class="font-size">14px</li>
+                                <li class="font-size">16px</li>
+                                <li class="font-size">18px</li>
+                                <li class="font-size">20px</li>
+                                <li class="font-size">22px</li>
+                                <li class="font-size">25px</li>
+                                <li class="font-size">30px</li>
+                            </ul>
+                        </div>
+                        <div tabindex="10" class="text-settings__text-color item2">
+                            <img src="./img/icons/palette.svg" alt="palette-icon">
+                        </div>    
+                        <div tabindex="11" class="text-settings__background item2">
+                            <img src="./img/icons/image.svg" alt="image-icon">
+                        </div>
+                    </div>
+                    <div tabindex="12" class="sign-in item item2">
+                        <img src="./img/icons/lock.svg" alt="lock-icon">
+                    </div>
+                    <div tabindex="13" class="sign-out item item2">
+                        <img src="./img/icons/unlock.svg" alt="unlock-icon">
+                    </div>
+                    <div class="item__editor item">
+                        <div tabindex="14" class="editor__save item2 editor-btns">
+                            <img src="./img/icons/floppy-disk.svg" alt="floppy-disk-icon">
+                        </div>
+                        <div tabindex="15" class="editor__table item2 editor-btns">
+                            <img src="./img/icons/table.svg" alt="table-icon">
+                        </div>
+                        <div tabindex="16" class="editor__num-list item2 editor-btns">
+                            <img src="./img/icons/list-ol.svg" alt="list-ol-icon">
+                        </div>
+                        <div tabindex="17" class="editor__mark-list item2 editor-btns">
+                            <img src="./img/icons/list-ul.svg" alt="list-ul-icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__main">
+                <div class="main__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quaerat itaque!</p>
+                </div>
+                <div class="container__edit-text">
+                    <textarea id="edit-text" rows="44"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="text-color__dropdown-content dropdown-content">
+            <div class="dropdown-content__title">
+                <h2>Choose text color</h2>
+                <div class="close-button">&times;</div>
+            </div>
+            <hr class="line">
+            <div class="text-color__box-color box">
+                <div class="box-item color-item" style="background: #0aa999"></div>
+                <div class="box-item color-item" style="background: #089083"></div>
+                <div class="box-item color-item" style="background: #1fb66c"></div>
+                <div class="box-item color-item" style="background: #1b9b5e"></div>
+                <div class="box-item color-item" style="background: #2891dd"></div>
+                <div class="box-item color-item" style="background: #207ab9"></div>
+                <div class="box-item color-item" style="background: #9b64b5"></div>
+                <div class="box-item color-item" style="background: #9051ad"></div>
+                <div class="box-item color-item" style="background: #31485e"></div>
+                <div class="box-item color-item" style="background: #283d4f"></div>
+                <div class="box-item color-item" style="background: #f5bd05"></div>
+                <div class="box-item color-item" style="background: #f89b0a"></div>
+                <div class="box-item color-item" style="background: #ed821b"></div>
+                <div class="box-item color-item" style="background: #db5c00"></div>
+                <div class="box-item color-item" style="background: #f25a38"></div>
+                <div class="box-item color-item" style="background: #c84525"></div>
+                <div class="box-item color-item" style="background: #eaeeef"></div>
+                <div class="box-item color-item" style="background: #bbc1c4"></div>
+                <div class="box-item color-item" style="background: #90a2a2"></div>
+                <div class="box-item color-item" style="background: #7c8a8b"></div>
+                <div class="box-item color-item" style="background: #000000"></div>
+            </div>
+        </div>
+        <div class="background__dropdown-content dropdown-content">
+            <div class="dropdown-content__title">
+                <h2>Choose background color or image</h2>
+                <div class="close-button">&times;</div>
+            </div>
+            <div class="dropdown-content__choose">
+                <a href="#" id="btn-colors">Colors</a>
+                <a href="#" id="btn-images">Images</a>
+                <a href="#" id="btn-files">Files</a>
+            </div>
+            <div class="background__box-color box">
+                <div class="box-item background-item" style="background: #0aa999"></div>
+                <div class="box-item background-item" style="background: #089083"></div>
+                <div class="box-item background-item" style="background: #1fb66c"></div>
+                <div class="box-item background-item" style="background: #1b9b5e"></div>
+                <div class="box-item background-item" style="background: #2891dd"></div>
+                <div class="box-item background-item" style="background: #207ab9"></div>
+                <div class="box-item background-item" style="background: #9b64b5"></div>
+                <div class="box-item background-item" style="background: #9051ad"></div>
+                <div class="box-item background-item" style="background: #31485e"></div>
+                <div class="box-item background-item" style="background: #283d4f"></div>
+                <div class="box-item background-item" style="background: #f5bd05"></div>
+                <div class="box-item background-item" style="background: #f89b0a"></div>
+                <div class="box-item background-item" style="background: #ed821b"></div>
+                <div class="box-item background-item" style="background: #db5c00"></div>
+                <div class="box-item background-item" style="background: #f25a38"></div>
+                <div class="box-item background-item" style="background: #c84525"></div>
+                <div class="box-item background-item" style="background: #eaeeef"></div>
+                <div class="box-item background-item" style="background: #bbc1c4"></div>
+                <div class="box-item background-item" style="background: #90a2a2"></div>
+                <div class="box-item background-item" style="background: #7c8a8b"></div>
+                <div class="box-item background-item" style="background: #000000"></div>
+            </div>
+            <div class="background__box-image box">
+                <div class="box-item image-item" style="background-image: url(./img/background-image/1.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/2.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/3.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/4.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/5.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/6.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/7.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/8.jpg)"></div>
+                <div class="box-item image-item" style="background-image: url(./img/background-image/9.jpg)"></div>
+            </div>
+            <div class="background__box-files box">
+                <input type="file" id="file">
+            </div>
+        </div>
+        <div class="sign-in__dropdown-content dropdown-content">
+            <div class="dropdown-content__title">
+                <h2>Sign In</h2>
+            </div>
+            <hr class="line">
+            <div class="sign-in__box">
+                <form>
+                    <input type="text" id="login" placeholder="Login here..">
+                    <input type="password" id="password" placeholder="Password here..">
+                </form>
+                <span class="sign-in__empty">Value is empty</span>
+                <div class="sign-in__button">
+                    <a href="#" id="sgn-btn">Sign in</a>
+                </div>
+            </div>
+        </div>
+        <div class="sign-out__dropdown-content dropdown-content">
+            <div class="cancel__button sign-out-btn">
+                <a href="#" id="cancel-btn">Cancel</a>
+            </div>
+            <div class="sign-out__button sign-out-btn">
+                <a href="#" id="sign-out-btn">Sign out</a>
+            </div>
+        </div>
+        <div class="editor-container__dropdown-content">
+            <div class="table__dropdown-content dropdown-content">
+                <div class="dropdown-content__title">
+                    <h2>Create table</h2>
+                    <div class="close-button">&times;</div>
+                </div>
+                <hr class="line">
+                <div class="container__create-table">
+                    <div class="create-table__box">
+                        <div class="create-table__left-box">
+                            <div class="left-box__count-tr table-box">
+                                <form>
+                                    <label for="count-tr">Count TR:</label>
+                                    <input id="count-tr" type="text" placeholder="Type here..">
+                                </form>
+                            </div>
+                            <div class="left-box__width-td table-box">
+                                <form>
+                                    <label for="width-td">Width of TD:</label>
+                                    <input id="width-td" type="text" placeholder="Type here..">
+                                </form>
+                            </div>
+                            <div class="left-box__width-border table-box">
+                                <form>
+                                    <label for="width-border">Width of border:</label>
+                                    <input id="width-border" type="text" placeholder="Type here..">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="create-table__right-box">
+                            <div class="right-box__count-td table-box">
+                                <form>
+                                    <label for="count-td">Count TD:</label>
+                                    <input id="count-td" type="text" placeholder="Type here..">
+                                </form>
+                            </div>
+                            <div class="right-box__height-td table-box">
+                                <form>
+                                    <label for="height-td">Height of TD:</label>
+                                    <input id="height-td" type="text" placeholder="Type here..">
+                                </form>
+                            </div>
+                            <div class="right-box__style-color-border">
+                                <div class="right-box__style-border table-box">
+                                    <form>
+                                        <label for="style-border">Style of border:</label>
+                                        <select id="style-border">
+                                            <option value="choose style" selected disabled>choose style</option>
+                                            <option value="dotted">dotted</option>
+                                            <option value="dashed">dashed</option>
+                                            <option value="solid">solid</option>
+                                            <option value="double">double</option>
+                                            <option value="groove">groove</option>
+                                            <option value="ridge">ridge</option>
+                                            <option value="inset">inset</option>
+                                            <option value="outset">outset</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div class="right-box__color-border table-box">
+                                    <form>
+                                        <label for="color-border">Color of border:</label>
+                                        <select id="color-border">
+                                            <option value="choose color" selected disabled>choose color</option>
+                                            <option value="black">black</option>
+                                            <option value="red">red</option>
+                                            <option value="green">green</option>
+                                            <option value="blue">blue</option>
+                                            <option value="yellow">yellow</option>
+                                            <option value="white">white</option>
+                                            <option value="gray">gray</option>
+                                            <option value="pink">pink</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="invalid">invalid value</span>
+                    <div class="create__table__buttons">
+                        <div class="table-reset__button reset__button reset-create-btns">
+                            <a href="#" id="reset-btn">Reset</a>
+                        </div>
+                        <div class="table-create__button create__button reset-create-btns">
+                            <a href="#" id="create-btn">Create</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ol-list__dropdown-content dropdown-content">
+                <div class="dropdown-content__title">
+                    <h2>Create OL</h2>
+                    <div class="close-button">&times;</div>
+                </div>
+                <hr class="line">
+                <div class="container__create-ol">
+                    <div class="create-ol__box">
+                        <div class="create-ol__count-li">
+                            <form>
+                                <label for="ol-count-li">Count li item:</label>
+                                <input id="ol-count-li" type="text" placeholder="Type here..">
+                            </form>
+                        </div>
+                        <div class="create-ol__type-mark">
+                            <form>
+                                <label for="ol-type-mark">Type mark of list:</label>
+                                <select id="ol-type-mark">
+                                    <option value="choose Ol type mark" selected disabled>choose Ol type mark</option>
+                                    <option value="1">1</option>
+                                    <option value="I">I</option>
+                                    <option value="i">i</option>
+                                    <option value="A">A</option>
+                                    <option value="a">a</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <span class="invalid">invalid value</span>
+                    <div class="create__ol__buttons">
+                        <div class="ol-reset__button reset__button reset-create-btns">
+                            <a href="#" id="reset-btn">Reset</a>
+                        </div>
+                        <div class="ol-create__button create__button reset-create-btns">
+                            <a href="#" id="create-btn">Create list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ul-list__dropdown-content dropdown-content">
+                <div class="dropdown-content__title">
+                    <h2>Create UL</h2>
+                    <div class="close-button">&times;</div>
+                </div>
+                <hr class="line">
+                <div class="container__create-ul">
+                    <div class="create-ul__box">
+                        <div class="create-ul__count-li">
+                            <form>
+                                <label for="ul-count-li">Count li item:</label>
+                                <input id="ul-count-li" type="text" placeholder="Type here..">
+                            </form>
+                        </div>
+                        <div class="create-ul__type-mark">
+                            <form>
+                                <label for="ul-type-mark">Type mark of list:</label>
+                                <select id="ul-type-mark">
+                                    <option value="choose Ul type mark" selected disabled>choose Ul type mark</option>
+                                    <option value="circle">circle</option>
+                                    <option value="disk">disk</option>
+                                    <option value="square">square</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <span class="invalid">invalid value</span>
+                    <div class="create__ul__buttons">
+                        <div class="ul-reset__button reset__button reset-create-btns">
+                            <a href="#" id="reset-btn">Reset</a>
+                        </div>
+                        <div class="ul-create__button create__button reset-create-btns">
+                            <a href="#" id="create-btn">Create list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
